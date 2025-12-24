@@ -1,0 +1,25 @@
+{
+	"name": "nodejs-hw-mongodb",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArcVladT/nodejs-hw-mongodb.git"
+	},
+	"keywords": [],
+	"author": "Arcturus <1303huawei@gmail.com>",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/ArcVladT/nodejs-hw-mongodb/issues"
+	},
+	"homepage": "https://github.com/ArcVladT/nodejs-hw-mongodb#readme",
+	"devDependencies": {
+		"nodemon": "^3.1.11"
+	}
+}
