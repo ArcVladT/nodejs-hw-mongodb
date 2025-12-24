@@ -8,12 +8,37 @@ export const getContacts = async () => {
 };
 
 export const getContactById = async (contactId) => {
-  console.log('foejfeojfj', contactId);
   const contact = await ContactsCollection.findById(contactId);
 
-  if (!contact) {
-    createHttpError(404, 'Contact not found');
-  }
+  return contact;
+};
+
+export const createContact = async (payload) => {
+  const contact = await ContactsCollection.create(payload);
+
+  return contact;
+};
+
+export const updateContact = async (contactId, payload, options) => {
+  const contact = await ContactsCollection.findByIdAndUpdate(
+    {
+      _id: contactId,
+    },
+    payload,
+    {
+      new: true,
+      includeResultMetadata: true,
+      ...options,
+    },
+  );
+
+  return contact;
+};
+
+export const deleteContact = async (contactId) => {
+  const contact = await ContactsCollection.findByIdAndDelete({
+    _id: contactId,
+  });
 
   return contact;
 };
