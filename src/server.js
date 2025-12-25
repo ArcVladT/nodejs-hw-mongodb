@@ -1,10 +1,11 @@
 import express from 'express';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { getEnvVar } from './utils/getEnvVar.js';
-import router from './routers/contacts.js';
+import router from './routers/index.js';
 import cors from 'cors';
 import pino from 'pino-http';
 import { errorHandler } from './middlewares/errorHandler.js';
+import cookieParser from 'cookie-parser';
 
 const PORT = Number(getEnvVar('PORT', '9090'));
 
@@ -17,6 +18,8 @@ export const setupServer = () => {
       limit: '100kb',
     }),
   );
+
+  app.use(cookieParser());
 
   app.use(cors());
 

@@ -1,6 +1,6 @@
 const parseContactType = (contactType) => {
   const isString = typeof contactType === 'string';
-  if (!isString) return false;
+  if (!isString) return;
 
   const allowed = ['work', 'personal', 'home'];
 
@@ -11,13 +11,12 @@ const parseContactType = (contactType) => {
 
 const parseBoolaen = (value) => {
   const isString = typeof value === 'string';
-  if (!isString) return false;
+  if (!isString) return;
 
   const v = value.toLowerCase();
 
   if (v === 'true') return true;
-
-  return false;
+  if (v === 'false') return false;
 };
 
 export const parseFilterParams = (query) => {
